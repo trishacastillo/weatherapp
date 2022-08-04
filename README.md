@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Weather App
+I created a Simple Weather Web App using Reactjs and openweather API. Openweather API is a great data source for live weather reports. This project can retrieve weather data such as temperature, weather description, weather status, and lastly location. 
+<p>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Application Preview
 
 ## Available Scripts
 
