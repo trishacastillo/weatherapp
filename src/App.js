@@ -31,11 +31,11 @@ function App() {
           </div>
            ):(
           <div className="container">
-            Test
             <p>{weatherData.name}</p>
-            <p>{Math.round(weatherData.main.temp)}F</p>
+            <p>{weatherData.sys.country}</p>
+            <p>{Math.round(weatherData.main.temp)}&#176;F but feels like {Math.round(weatherData.main.feels_like)} &#176; F</p>
             <p>{weatherData.weather[0].main}</p>
-            <p>{weatherData.weather[0].description}</p>
+            <p>Description {weatherData.weather[0].description}</p>
 
           </div>  
            )}

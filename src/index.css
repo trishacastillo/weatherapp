@@ -6,6 +6,14 @@
   font-family: "Quicksand";
   color: #333;
 }
+.App{
+  background-image: url(images/weather-bg.jpg);
+  padding: 3em;
+  background-size: cover;
+  height: 100vh;
+  
+}
+
 .container{
   display:flex;
   flex-direction: column;
