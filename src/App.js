@@ -41,7 +41,7 @@ function App() {
             <div className="welcome-box ">
              <h2>Welcome to Weather App</h2>
              <p>Kindly type above the city you want.
-             And we gonna display the currently weather.</p>
+             And we gonna display the current weather.</p>
              <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather" />
 
              {weatherData.cod==='404' ? (
