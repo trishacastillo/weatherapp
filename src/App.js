@@ -7,22 +7,26 @@ function App() {
   const [isPending, setIsPending] = useState(true);
 
   const getWeather=(event)=>{
-    setTimeout(() => {
-    if (event.key==="Enter"){
-      fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&APPID='+APIKey).then(
-        response=>response.json()
-      ).then(
-        data=>{
-          setIsPending(false);
-          setWeatherData(data)
-        }
-      )
-    }
-   }, 1000);
+    try{
+      if (event.key==="Enter"){
+        fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial&APPID='+APIKey).then(
+          response=>response.json()
+        ).then(
+          data=>{
+            setIsPending(false);
+            setWeatherData(data)
+          }
+        )
+      }
+    } catch(e) {
+      console.log('error: ', e);  
   }
+}
+
   
   return (
     <div className="App">
+      <div className="view">
       <div className="user-input">
         <input type='text' 
                placeholder='Enter City...'
@@ -30,33 +34,42 @@ function App() {
                value={city}
                onKeyPress={getWeather}/>
         </div>
-        { isPending && <div>Loading...</div> }
+
+      
         {typeof weatherData.main==='undefined' ? (
-          <div>
-             <p>Welcome</p>
+          <div className="fixed"> 
+            <div className="welcome-box ">
+             <h2>Welcome to Weather App</h2>
+             <p>Kindly type above the city you want.
+             And we gonna display the currently weather.</p>
+             <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather" />
+
+             {weatherData.cod==='404' ? (
+                   <h2 className="error-msg">Opps! City not found.</h2>
+                   ):(<></>)}  
+             </div>
           </div>
            ):(
-          <div className="container">
-            <p>{weatherData.name} , {weatherData.sys.country}</p>
-            <p>
-              {isPending ? (<></> ):(<img src={"https://openweathermap.org/img/wn/"+weatherData.weather[0].icon+"@2x.png"} alt="" />)}
-        
-            </p>
-            <p>{weatherData.weather[0].main}</p>
-            <p>{weatherData.weather[0].description}</p>
-            <p>Temperature: {Math.round(weatherData.main.temp)}&#176;F </p>
-            <p>Feels like: {Math.round(weatherData.main.feels_like)} &#176; F</p>
-          </div>  
+          
+          <div className="container fixed">
+             <h2>{weatherData.name} , {weatherData.sys.country}</h2>
+             <p>{new Date().toLocaleString() + ""}</p>
+             <p> {isPending ? (<></> ):(<img src={"https://openweathermap.org/img/wn/"+weatherData.weather[0].icon+"@2x.png"} alt="" />)} </p>
+             <h2>{Math.round(weatherData.main.temp)}&#176;F </h2>
+             <p>{weatherData.weather[0].main} - {weatherData.weather[0].description}</p>
+            
+            
+          </div>
+            
            )}
-
-        {weatherData.cod==='404' ? (
-          <p>Opps! City not found.</p>
-        ):(<></>)}
-               
-      
-      
-      
+    
+    <hr/>
+    <footer>
+    <p>Made with 💛 by Trisha Castillo v2022</p>
+    </footer>
     </div>
+    </div>
+    
   );
 }
 

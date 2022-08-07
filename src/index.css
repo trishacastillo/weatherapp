@@ -22,7 +22,6 @@
   padding: 1em;
 }
 .user-input{
-  width: 80%;
   margin-left: auto;
   margin-top: 1em;
 }
@@ -31,4 +30,44 @@
   width: 80%;
   border-radius: 6px;
   border: 1px solid lightgray;
+}
+.view{
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+.view hr{
+  width: 75%;
+  margin: auto;
+}
+footer{
+  margin-top: 1em;
+}
+.fixed{
+  height: 40vh;
+}
+.welcome-box{
+  padding: 3em;
+  width: 50%;
+  margin: auto;
+}
+.error-msg{
+  margin-bottom: 1em;
+}
+@media only screen and (max-width: 600px) {
+  .App{
+    padding: 2em;    
+  }
+  .view{
+    width: 100%;
+  }
+  .welcome-box {
+    padding: 1em;
+    width: auto;
+    margin: auto;
+}
+.fixed {
+  height: 50vh;
+  padding: 1em;
+}
 }
