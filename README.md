@@ -1,5 +1,9 @@
 # Weather App
 I created a Simple Weather Web App using Reactjs and openweather API. Openweather API is a great data source for live weather reports. This project can retrieve weather data such as temperature, weather description, weather status, and lastly location. 
+
+# Live Demo
+Link : https://github.com/trishacastillo/weatherapp/
+
 <p>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).</p>
 
 ## Application Preview
