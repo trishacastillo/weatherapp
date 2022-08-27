@@ -7,7 +7,6 @@ I created a Simple Weather Web App using Reactjs and openweather API. Openweathe
 
 Link : https://trishacastillo.github.io/weatherapp/
 
-<p>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).</p>
 
 ## Application Preview
 
